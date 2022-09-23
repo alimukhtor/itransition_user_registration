@@ -22,7 +22,7 @@ const Register = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const response = await fetch("http://localhost:3001/users/register", {
+    const response = await fetch("https://itransition-be.herokuapp.com/users/register", {
       method: "POST",
       body: JSON.stringify(registration),
       headers: {

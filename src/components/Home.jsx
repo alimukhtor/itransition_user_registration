@@ -12,7 +12,7 @@ const Home = () => {
   const [isChecked, setisChecked] = useState([]);
   const fetchUsers = async () => {
     try {
-      const response = await fetch("http://localhost:3001/users", {
+      const response = await fetch("https://itransition-be.herokuapp.com/users", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -34,7 +34,7 @@ const Home = () => {
   }, [setisChecked]);
 
   const handleDeleteUser = async () => {
-    const response = await fetch(`http://localhost:3001/users/deleteUsers`, {
+    const response = await fetch(`https://itransition-be.herokuapp.com/users/deleteUsers`, {
       method: "DELETE",
       body: JSON.stringify(isChecked),
       headers: {
@@ -50,7 +50,7 @@ const Home = () => {
 
   const handleBlockedUseStatus = async () => {
     try {
-      const response = await fetch(`http://localhost:3001/users/status`, {
+      const response = await fetch(`https://itransition-be.herokuapp.com/users/status`, {
         method: "PUT",
         body: JSON.stringify({isChecked, title: "Blocked" }),
         headers: {
@@ -60,7 +60,7 @@ const Home = () => {
       if(response.ok){
         const data = await response.json()
         if(data.length === users.length){
-          navigate("/register")
+          navigate("/login")
         }else{
           window.location.reload()
 
@@ -74,7 +74,7 @@ const Home = () => {
 
   const handleActiveUseStatus = async () => {
     try {
-      const response = await fetch(`http://localhost:3001/users/status`, {
+      const response = await fetch(`https://itransition-be.herokuapp.com/users/status`, {
         method: "PUT",
         body: JSON.stringify({isChecked, title: "Active" }),
         headers: {

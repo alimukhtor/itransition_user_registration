@@ -31,7 +31,7 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:3001/users/login", {
+    const response = await fetch("https://itransition-be.herokuapp.com/users/login", {
       method: "POST",
       body: JSON.stringify(login),
       headers: {
