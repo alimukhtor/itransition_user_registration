@@ -15,8 +15,7 @@ const Home = () => {
       const response = await fetch("https://itransition-be.herokuapp.com/users", {
         method: "GET",
         headers: {
-          "Content-Type": "application/json",
-          Authorization: "Bearer " + token,
+          "Content-Type": "application/json"
         },
       });
       if (response.ok) {
