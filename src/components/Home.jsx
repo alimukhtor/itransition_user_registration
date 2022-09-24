@@ -158,13 +158,12 @@ const Home = () => {
                   <td>{user.name}</td>
                   <td>{user.email}</td>
                   <td>
-                    {format(parseISO(user.updatedAt), "EEEE, MMM. do - HH:mm")}
+                    {format(parseISO(user.lastLogin), "EEEE, MMM. do - HH:mm")}
                   </td>
                   <td>
                     {format(parseISO(user.createdAt), "EEEE, MMM. do - HH:mm")}
                   </td>
                   <td>{user.status}</td>
-                  {/* <td>{isChecked.includes(user._id) ? currentStatus : "Active"}</td> */}
                 </tr>
               ))}
             </tbody>
